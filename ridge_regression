@@ -8,6 +8,6 @@ R = x' * x;
 R_inv = inv(R);
 d = size(x, 2);
 w_ls = R_inv * x' * y;
-w = inv(eye(d) + (lambda * R_inv)) * x' * y;
+w = inv((lambda * eye(d)) + R_inv) * x' * y;
 
 end
