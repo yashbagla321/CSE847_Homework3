@@ -1,0 +1,13 @@
+
+function [ w ] = ridge_regression( x, y, lambda )
+
+%implements ridge regression using the training data from
+%the input and lambda parameter.
+
+R = x' * x;
+R_inv = inv(R);
+d = size(x, 2);
+w_ls = R_inv * x' * y;
+w = inv(eye(d) + (lambda * R_inv)) * x' * y;
+
+end
